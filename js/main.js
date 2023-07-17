@@ -7,7 +7,8 @@
 // 2) Calcolo la loro differenza in millisecondi
 // 3) Converto la differenza in giorni, ore, minuti e secondi
 // 4) Verifico la differenza del passaggio precedente
-// 5)
+// 5) Imposto il cronometro dell'HTML in tempo reale
+// 6) Stabilisco la condizione che va visualizzare sull'html il messaggio di inizio della lezione
 
 
 "use strict"
@@ -51,6 +52,7 @@ function countdownTimer() {
     // Modifico il cronometro dell'HTML in tempo reale
     document.getElementById("countdown-timer").innerHTML = days + "gg " + hours + "ore " + minutes + "min " + seconds + "sec";
 
+    // Se il countdown è terminato, mostra questo messaggio 
     if (remainingTime < 0) {
         clearInterval(updateCountdown);
         document.getElementById("countdown").innerHTML = "La lezione di Boolean è iniziata!";
