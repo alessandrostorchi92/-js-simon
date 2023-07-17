@@ -3,8 +3,8 @@
 
 // Procedimento: 
 // 1) Imposto la data di fine del conto alla rovescia mediante la funzione new Date(...).getTime(), che mi consente di impostare una data e ora specifica
-// 2) Verifico la corretta impostazione della data di fine conto alla rovescia
-// 3) Imposto la data corrente mediante la funzione new Date().getTime(), che mi consente di impostare la data attuale
+// 2) Assegno ad una variabile la data e l'ora corrente. Uso come variabile let affinchè la data possa aggiornarsi all'interno della funzione
+// 3) Recupero la data attuale all'avvio della pagina
 // 4) Verifico la corretta impostazione della data corrente
 // 5)  Verifico la differenza tra le due date in millisecondi
 // 6) Imposto i calcoli della differenza tra le date per ottenere la differenza in giorni, ore, minuti e secondi 
@@ -15,13 +15,17 @@
 // Assegno ad una variabile l'HTMLElement del Countdown
 const countdown = document.getElementById("countdown");
 
+// imposto una data e ora specifica
+
+const lessonStarted = new Date("Jul 18, 2023 09:30:00").getTime();
+
 // Assegno ad una variabile la data e l'ora corrente. Uso come variabile let affinchè la data possa aggiornarsi all'interno della funzione
 let now = new Date();
 
 // Recupero la data attuale all'avvio della pagina
 countdown .innerHTML = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
 
-updateCountdown()
+const timerCountdown = setInterval(updateCountdown, 1000);
 
 // setInterval(updateCountdown, 1000); Impostando un timer più breve risolvo il problema dell'asincronicità dovuta ai rallentamenti del browser, quindi posso impostare 500 ecc...
 
@@ -33,7 +37,7 @@ function updateCountdown () {
     
     // Verifico che il countdown stia funzionando 
     console.log("countdown update");
-}
+} 1000;
 
 
 
