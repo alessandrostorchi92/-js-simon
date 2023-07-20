@@ -55,7 +55,7 @@ function countdownTimer() {
     // Se il countdown è terminato, mostra questo messaggio 
     if (remainingTime < 0) {
         clearInterval(updateCountdown);
-        document.getElementById("countdown").innerHTML = "La lezione di Boolean è iniziata!";
+        document.getElementById("countdown-timer").innerHTML = "La lezione di Boolean è iniziata!";
     }
 
 };
